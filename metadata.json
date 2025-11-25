@@ -1,0 +1,7 @@
+{
+  "name": "WeConnect E2b",
+  "description": "The all-in-one monthly subscription platform for SMEs. Bring customers in, manage orders, use your own fleet or ours, and own your data completely.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
