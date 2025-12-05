@@ -56,7 +56,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
                 <div className="w-8 h-8 bg-gradient-to-br from-primary-700 to-accent-blue rounded-lg flex items-center justify-center mr-2.5 group-hover:scale-105 transition-transform">
                   <Store size={16} className="text-white" />
                 </div>
-                <span className="text-title-lg font-semibold text-primary-600 tracking-tight">Eburon</span>
+                <span className="text-title-lg font-semibold text-primary-600 tracking-tight">Wecon</span>
               </div>
               <nav className="hidden sm:ml-10 sm:flex sm:space-x-1">
                 {navItems.map((item) => (
@@ -173,7 +173,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
       <footer className="bg-primary-50 border-t border-primary-100 mt-auto">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <p className="text-center text-caption text-primary-400">
-            &copy; 2024 Eburon. Empowering Filipino SMEs.
+            &copy; 2024 Wecon. Empowering Filipino SMEs.
           </p>
         </div>
       </footer>

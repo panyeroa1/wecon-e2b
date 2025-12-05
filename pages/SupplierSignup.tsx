@@ -73,7 +73,7 @@ export const SupplierSignup: React.FC<SupplierSignupProps> = ({ onBack, onComple
           Supplier Registration
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Join the Eburon B2B Marketplace for Filipino SMEs
+          Join the Wecon B2B Marketplace for Filipino SMEs
         </p>
       </div>
 

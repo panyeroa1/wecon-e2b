@@ -241,7 +241,7 @@ export const VendorDashboard: React.FC = () => {
         </div>
         <div className="px-4 py-5 sm:p-6">
           <p className="text-sm text-gray-600 mb-4">
-            Eburon believes you own your data. Export your full customer list, order history, and product data at any time in standard CSV format.
+            Wecon believes you own your data. Export your full customer list, order history, and product data at any time in standard CSV format.
           </p>
           <button 
             onClick={() => alert('Downloading data_export_2024.csv...')}

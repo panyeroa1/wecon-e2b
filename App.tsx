@@ -28,7 +28,7 @@ const LoginPage = ({ onShowSupplierSignup }: { onShowSupplierSignup: () => void 
           </div>
         </div>
         <h1 className="mt-8 text-center text-headline font-semibold text-primary-600 tracking-tight">
-          Eburon
+          Wecon
         </h1>
         <p className="mt-3 text-center text-body text-primary-500">
           B2B Marketplace for Filipino SMEs
@@ -69,7 +69,7 @@ const LoginPage = ({ onShowSupplierSignup }: { onShowSupplierSignup: () => void 
                 >
                   <option value="buyer">Buyer (SME)</option>
                   <option value="vendor">Vendor (Supplier)</option>
-                  <option value="admin">Admin (Eburon)</option>
+                  <option value="admin">Admin (Wecon)</option>
                 </select>
               </div>
               <p className="mt-2 text-caption text-primary-400">
