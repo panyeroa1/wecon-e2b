@@ -64,6 +64,7 @@ export const BuyerOrders: React.FC = () => {
                     <div className="relative">
                       {/* Connecting Lines */}
                       <div className="absolute top-4 left-0 w-full h-0.5 bg-gray-200 -z-10" />
+                      {/* Inline style required for dynamic width calculation based on order status */}
                       <div 
                         className="absolute top-4 left-0 h-0.5 bg-primary-600 -z-10 transition-all duration-500 ease-in-out" 
                         style={{ width: `${(currentStepIndex / (timelineSteps.length - 1)) * 100}%` }}

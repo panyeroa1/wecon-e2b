@@ -122,6 +122,7 @@ export const Cart: React.FC<CartProps> = ({ items, updateQuantity, removeItem, c
                           <button 
                             onClick={() => removeItem(item.id)}
                             className="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
+                            aria-label="Remove item from cart"
                           >
                             <Trash2 className="h-5 w-5" />
                           </button>
@@ -144,11 +145,11 @@ export const Cart: React.FC<CartProps> = ({ items, updateQuantity, removeItem, c
                   <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
                     <div className="sm:col-span-2">
                       <label className="block text-sm font-medium text-gray-700">Company Name</label>
-                      <input type="text" defaultValue="TechStart Inc." className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" />
+                      <input type="text" defaultValue="TechStart Inc." placeholder="Enter company name" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" />
                     </div>
                     <div className="sm:col-span-2">
                       <label className="block text-sm font-medium text-gray-700">Address</label>
-                      <input type="text" defaultValue="123 Corporate Center, Makati City" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" />
+                      <input type="text" defaultValue="123 Corporate Center, Makati City" placeholder="Enter address" className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm" />
                     </div>
                   </div>
                 </div>

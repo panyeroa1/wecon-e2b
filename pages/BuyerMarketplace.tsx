@@ -52,6 +52,7 @@ export const BuyerMarketplace: React.FC<BuyerMarketplaceProps> = ({ addToCart })
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
             className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md"
+            aria-label="Filter by category"
           >
             {categories.map(cat => (
               <option key={cat} value={cat}>{cat}</option>
@@ -128,6 +129,8 @@ export const BuyerMarketplace: React.FC<BuyerMarketplaceProps> = ({ addToCart })
                     value={getQty(product)}
                     onChange={(e) => handleQtyChange(product.id, e.target.value)}
                     className="w-20 p-2 border border-gray-300 rounded-md text-center text-sm"
+                    placeholder="Qty"
+                    aria-label="Quantity"
                   />
                   <button
                     onClick={() => addToCart(product, getQty(product))}
