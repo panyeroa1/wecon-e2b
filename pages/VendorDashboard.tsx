@@ -419,7 +419,7 @@ export const VendorDashboard: React.FC = () => {
           <div className="bg-white rounded-lg shadow-xl w-full max-w-lg mx-4 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between p-4 border-b">
               <h3 className="text-lg font-semibold">Add New Product</h3>
-              <button onClick={() => setShowAddModal(false)} className="p-1 hover:bg-gray-100 rounded">
+              <button onClick={() => setShowAddModal(false)} className="p-1 hover:bg-gray-100 rounded" aria-label="Close modal">
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -444,6 +444,7 @@ export const VendorDashboard: React.FC = () => {
                     value={productForm.category}
                     onChange={handleProductFormChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                    aria-label="Product category"
                   >
                     <option value="Office Supplies">Office Supplies</option>
                     <option value="Furniture">Furniture</option>
@@ -460,6 +461,7 @@ export const VendorDashboard: React.FC = () => {
                     value={productForm.leadTimeHours}
                     onChange={handleProductFormChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                    aria-label="Lead time in hours"
                   >
                     <option value={12}>12 hours (Express)</option>
                     <option value={24}>24 hours (Standard SLA)</option>
@@ -479,6 +481,7 @@ export const VendorDashboard: React.FC = () => {
                     value={productForm.price}
                     onChange={handleProductFormChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                    placeholder="0"
                   />
                 </div>
                 <div>
@@ -491,6 +494,7 @@ export const VendorDashboard: React.FC = () => {
                     value={productForm.stock}
                     onChange={handleProductFormChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                    placeholder="0"
                   />
                 </div>
                 <div>
@@ -503,6 +507,7 @@ export const VendorDashboard: React.FC = () => {
                     value={productForm.minOrderQty}
                     onChange={handleProductFormChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                    placeholder="1"
                   />
                 </div>
               </div>
