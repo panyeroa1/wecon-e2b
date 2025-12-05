@@ -20,27 +20,29 @@ const LoginPage = ({ onShowSupplierSignup }: { onShowSupplierSignup: () => void 
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="flex justify-center text-primary-600">
-          <Truck size={48} />
+    <div className="min-h-screen bg-gradient-to-b from-white to-primary-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md animate-fade-in">
+        <div className="flex justify-center">
+          <div className="w-16 h-16 bg-gradient-to-br from-primary-700 to-accent-blue rounded-2xl flex items-center justify-center shadow-apple-md">
+            <Truck size={32} className="text-white" />
+          </div>
         </div>
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          WeCon B2B
-        </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Sign in to your account
+        <h1 className="mt-8 text-center text-headline font-semibold text-primary-600 tracking-tight">
+          Eburon
+        </h1>
+        <p className="mt-3 text-center text-body text-primary-500">
+          B2B Marketplace for Filipino SMEs
         </p>
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md animate-slide-up">
+        <div className="bg-white py-10 px-8 shadow-apple-lg rounded-apple-xl border border-primary-100/50">
           <form className="space-y-6" onSubmit={handleLogin}>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-body-sm font-medium text-primary-600">
                 Email address
               </label>
-              <div className="mt-1">
+              <div className="mt-2">
                 <input
                   id="email"
                   name="email"
@@ -48,48 +50,49 @@ const LoginPage = ({ onShowSupplierSignup }: { onShowSupplierSignup: () => void 
                   autoComplete="email"
                   required
                   defaultValue="user@example.com"
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                  className="block w-full px-4 py-3 text-body text-primary-600 bg-primary-50/50 border-0 rounded-apple placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-accent-blue/30 focus:bg-white transition-all duration-200"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="role" className="block text-sm font-medium text-gray-700">
-                Select Demo Role
+              <label htmlFor="role" className="block text-body-sm font-medium text-primary-600">
+                Select Role
               </label>
-              <div className="mt-1">
+              <div className="mt-2">
                 <select
                   id="role"
+                  title="Select your role"
                   value={selectedRole}
                   onChange={(e) => setSelectedRole(e.target.value as UserRole)}
-                  className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                  className="block w-full px-4 py-3 text-body text-primary-600 bg-primary-50/50 border-0 rounded-apple focus:outline-none focus:ring-2 focus:ring-accent-blue/30 focus:bg-white transition-all duration-200 cursor-pointer"
                 >
                   <option value="buyer">Buyer (SME)</option>
                   <option value="vendor">Vendor (Supplier)</option>
-                  <option value="admin">Admin (WeCon)</option>
+                  <option value="admin">Admin (Eburon)</option>
                 </select>
               </div>
-              <p className="mt-2 text-xs text-gray-500">
-                *In a real app, role is determined by your account credentials.
+              <p className="mt-2 text-caption text-primary-400">
+                Role is determined by your account in production.
               </p>
             </div>
 
-            <div>
+            <div className="pt-2">
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                className="btn-apple w-full py-3.5 px-6 text-body font-medium"
               >
-                Sign in
+                Sign In
               </button>
             </div>
 
-            <div className="mt-6">
+            <div className="pt-4">
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300" />
+                  <div className="w-full border-t border-primary-100" />
                 </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">New supplier?</span>
+                <div className="relative flex justify-center text-caption">
+                  <span className="px-4 bg-white text-primary-400">New supplier?</span>
                 </div>
               </div>
 
@@ -97,7 +100,7 @@ const LoginPage = ({ onShowSupplierSignup }: { onShowSupplierSignup: () => void 
                 <button
                   type="button"
                   onClick={onShowSupplierSignup}
-                  className="w-full flex justify-center py-2 px-4 border border-primary-600 rounded-md shadow-sm text-sm font-medium text-primary-600 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                  className="btn-apple-secondary w-full py-3 px-6 text-body font-medium border border-primary-200 hover:border-accent-blue"
                 >
                   Register as Supplier
                 </button>
@@ -105,6 +108,10 @@ const LoginPage = ({ onShowSupplierSignup }: { onShowSupplierSignup: () => void 
             </div>
           </form>
         </div>
+        
+        <p className="mt-8 text-center text-caption text-primary-400">
+          By signing in, you agree to our Terms of Service
+        </p>
       </div>
     </div>
   );
