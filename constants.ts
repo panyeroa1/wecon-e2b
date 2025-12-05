@@ -19,6 +19,9 @@ export const MOCK_PRODUCTS: Product[] = [
     leadTimeHours: 24,
     image: 'https://picsum.photos/400/300?random=1',
     description: 'High quality 70gsm multipurpose paper.',
+    rating: 4.8,
+    reviewCount: 156,
+    isVerified: true,
   },
   {
     id: 'p2',
@@ -32,7 +35,10 @@ export const MOCK_PRODUCTS: Product[] = [
     leadTimeHours: 48,
     image: 'https://picsum.photos/400/300?random=2',
     description: 'Breathable mesh back with lumbar support.',
-    isSponsored: true, // Marked as sponsored
+    isSponsored: true,
+    rating: 4.5,
+    reviewCount: 89,
+    isVerified: true,
   },
   {
     id: 'p3',
@@ -46,6 +52,9 @@ export const MOCK_PRODUCTS: Product[] = [
     leadTimeHours: 24,
     image: 'https://picsum.photos/400/300?random=3',
     description: 'General purpose cement for structural applications.',
+    rating: 4.2,
+    reviewCount: 312,
+    isVerified: true,
   },
   {
     id: 'p4',
@@ -59,6 +68,9 @@ export const MOCK_PRODUCTS: Product[] = [
     leadTimeHours: 12,
     image: 'https://picsum.photos/400/300?random=4',
     description: 'Premium grade Jasmine rice, fresh harvest.',
+    rating: 4.9,
+    reviewCount: 203,
+    isVerified: false,
   },
 ];
 

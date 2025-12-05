@@ -29,6 +29,9 @@ export interface Product {
   image: string;
   description: string;
   isSponsored?: boolean; // New field for ad visibility
+  rating?: number; // 1-5 star rating
+  reviewCount?: number;
+  isVerified?: boolean; // Verified supplier badge
 }
 
 export interface CartItem extends Product {

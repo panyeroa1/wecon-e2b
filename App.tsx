@@ -6,10 +6,11 @@ import { Cart } from './pages/Cart';
 import { BuyerOrders } from './pages/BuyerOrders';
 import { VendorDashboard } from './pages/VendorDashboard';
 import { AdminDashboard } from './pages/AdminDashboard';
+import { SupplierSignup } from './pages/SupplierSignup';
 import { Product, CartItem, UserRole } from './types';
 import { Lock, ShoppingBag, Truck, CheckCircle } from 'lucide-react';
 
-const LoginPage = () => {
+const LoginPage = ({ onShowSupplierSignup }: { onShowSupplierSignup: () => void }) => {
   const { login } = useAuth();
   const [selectedRole, setSelectedRole] = useState<UserRole>('buyer');
 
@@ -80,6 +81,27 @@ const LoginPage = () => {
               >
                 Sign in
               </button>
+            </div>
+
+            <div className="mt-6">
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-gray-300" />
+                </div>
+                <div className="relative flex justify-center text-sm">
+                  <span className="px-2 bg-white text-gray-500">New supplier?</span>
+                </div>
+              </div>
+
+              <div className="mt-6">
+                <button
+                  type="button"
+                  onClick={onShowSupplierSignup}
+                  className="w-full flex justify-center py-2 px-4 border border-primary-600 rounded-md shadow-sm text-sm font-medium text-primary-600 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  Register as Supplier
+                </button>
+              </div>
             </div>
           </form>
         </div>
@@ -157,7 +179,22 @@ const AuthenticatedApp = () => {
 
 const AppContent = () => {
   const { isAuthenticated } = useAuth();
-  return isAuthenticated ? <AuthenticatedApp /> : <LoginPage />;
+  const [showSupplierSignup, setShowSupplierSignup] = useState(false);
+
+  if (showSupplierSignup) {
+    return (
+      <SupplierSignup
+        onBack={() => setShowSupplierSignup(false)}
+        onComplete={() => setShowSupplierSignup(false)}
+      />
+    );
+  }
+
+  return isAuthenticated ? (
+    <AuthenticatedApp />
+  ) : (
+    <LoginPage onShowSupplierSignup={() => setShowSupplierSignup(true)} />
+  );
 };
 
 const App: React.FC = () => {

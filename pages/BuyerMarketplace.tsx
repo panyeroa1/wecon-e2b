@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MOCK_PRODUCTS } from '../constants';
 import { Product, CartItem } from '../types';
-import { Search, Filter, Clock, Info, Megaphone } from 'lucide-react';
+import { Search, Filter, Clock, Info, Megaphone, Star, BadgeCheck } from 'lucide-react';
 
 interface BuyerMarketplaceProps {
   addToCart: (product: Product, qty: number) => void;
@@ -80,13 +80,36 @@ export const BuyerMarketplace: React.FC<BuyerMarketplaceProps> = ({ addToCart })
                </div>
             </div>
             <div className="p-4 flex-1 flex flex-col">
-              <div className="mb-1">
+              <div className="mb-1 flex items-center justify-between">
                 <span className="text-xs font-medium text-primary-600 bg-primary-50 px-2 py-0.5 rounded-full">
                   {product.category}
                 </span>
+                {product.isVerified && (
+                  <span className="flex items-center text-xs text-green-600">
+                    <BadgeCheck size={14} className="mr-0.5" /> Verified
+                  </span>
+                )}
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-2">{product.name}</h3>
-              <p className="text-sm text-gray-500 mb-2">Sold by: {product.vendorName}</p>
+              <div className="flex items-center mb-2">
+                <p className="text-sm text-gray-500">Sold by: {product.vendorName}</p>
+              </div>
+              {/* Rating Display */}
+              {product.rating && (
+                <div className="flex items-center gap-1 mb-2">
+                  <div className="flex items-center">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star
+                        key={star}
+                        size={14}
+                        className={star <= Math.round(product.rating!) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-600">{product.rating.toFixed(1)}</span>
+                  <span className="text-xs text-gray-400">({product.reviewCount} reviews)</span>
+                </div>
+              )}
               <div className="mt-auto pt-4 border-t border-gray-100">
                 <div className="flex justify-between items-end mb-4">
                   <div>
